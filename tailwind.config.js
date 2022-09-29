@@ -34,6 +34,7 @@ module.exports = {
         },
         bodytxt: {
           base: '#343D48', // body color and primary color
+          secondary: '#02073E',
         },
         background: {
           base: '#FFFFFF', // body background color
