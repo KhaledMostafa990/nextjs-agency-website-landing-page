@@ -53,7 +53,7 @@ function Navigation() {
       ref={headerRef}
       className='
     header container fixed [&.scrolled-down]:bg-background-base 
-    [&.scrolled-down]:shadow-md shadow-neutral-300 transition-all duration-[0.65s] '
+    [&.scrolled-down]:shadow-md shadow-neutral-300 transition-all duration-[0.65s] z-30'
     >
       <div className='col-start-2 col-span-10 3xl:col-start-3 3xl:col-span-8 flex justify-between items-center py-4 xl:py-8 [&.scrolled-down]:py-1.5 [&.scrolled-down]:xl:py-3.5 transition-all duration-[0.65s]  '>
         {/* header Buttons */}
@@ -68,7 +68,7 @@ function Navigation() {
           </button>
 
           {/* Menu Button */}
-          <div className=' z-20 lg:hidden flex items-center'>
+          <div className=' z-40 lg:hidden flex items-center'>
             <button
               id='menu-btn'
               className='custom-hamburger-menu w-[24px] h-[18px] flex gap-[4.5px] '
@@ -101,7 +101,7 @@ function Navigation() {
         <nav
           id='nav'
           ref={navRef}
-          className='nav h-screen absolute top-0 [&.active]:bg-white min-w-[80%] max-w-xs transition-transform duration-1000 [&.active]:block right-0 translate-x-[100%] [&.active]:translate-x-[0%] z-10 pt-28 lg:min-w-fit lg:static lg:h-fit lg:w-fit lg:p-0 lg:translate-x-0 '
+          className='nav h-screen absolute top-0 [&.active]:bg-white min-w-[80%] max-w-xs transition-transform duration-1000 [&.active]:block right-0 translate-x-[100%] [&.active]:translate-x-[0%] z-20 pt-28 lg:min-w-fit lg:static lg:h-fit lg:w-fit lg:p-0 lg:translate-x-0 '
         >
           <figure
             className='w-32 flex items-center absolute top-6 left-8 transition-opacity duration-[3.5s] opacity-0 [&.active]:opacity-100 xl:w-fit lg:hidden'
@@ -109,8 +109,8 @@ function Navigation() {
           >
             <Image src={logo} alt={'logo img'} />
           </figure>
-          <ul className='pl-8 lg:pl-0 flex flex-col lg:flex-row'>
-            <li className='py-3 border-y-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03 lg:py-0 border-none'>
+          <ul className='pl-8 md:pl-16 lg:pl-0 flex flex-col lg:flex-row'>
+            <li className='py-3 border-y-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03 lg:py-0 lg:border-none'>
               <a
                 href='#home'
                 className='active capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-500 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
@@ -118,7 +118,7 @@ function Navigation() {
                 home
               </a>
             </li>
-            <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 border-none'>
+            <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'>
               <a
                 href='#support'
                 className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-500 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
@@ -126,7 +126,7 @@ function Navigation() {
                 support
               </a>
             </li>
-            <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 border-none'>
+            <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'>
               <a
                 href='#Features'
                 className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-500 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
@@ -134,7 +134,7 @@ function Navigation() {
                 features
               </a>
             </li>
-            <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 border-none'>
+            <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'>
               <a
                 href='#Pricing'
                 className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-500 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
@@ -142,7 +142,7 @@ function Navigation() {
                 pricing
               </a>
             </li>
-            <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 border-none'>
+            <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'>
               <a
                 href='#Testimonials'
                 className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-500 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '

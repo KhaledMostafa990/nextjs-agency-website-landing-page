@@ -73,10 +73,10 @@ function Hero() {
         <div className='flex justify-center flex-1 items-center'>
           <figure>
             <Image
+              width={740}
+              height={480}
               layout='intrinsic'
               src={heroImg}
-              width='700'
-              height='550'
               alt={'Ultimate support system'}
             />
           </figure>
