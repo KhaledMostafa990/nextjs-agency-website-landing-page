@@ -7,7 +7,7 @@ import dropbox from '../public/images/dropbox.png';
 function Hero() {
   return (
     <section className='bg-primary-base/10 col-span-12 container xl:min-h-screen h-full pb-10 lg:pb-20'>
-      <div className='col-start-2 col-span-10 3xl:col-start-3 3xl:col-span-8 flex flex-col gap-12   lg:justify-between pt-36 lg:pt-40 xl:pt-56 lg:flex-row lg:place-self-center'>
+      <div className='w-full col-start-2 col-span-10 3xl:col-start-3 3xl:col-span-8 flex flex-col gap-12 lg:justify-between pt-36 lg:pt-40 xl:pt-56 lg:flex-row lg:place-self-center xl:justify-between'>
         {/* Hero Text Content */}
         <div className='flex flex-col gap-7 md:gap-10  justify-start md:items-center lg:items-start flex-1'>
           <h1 className=' text-heading-base text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-bold md:text-center lg:text-start'>

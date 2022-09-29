@@ -32,11 +32,31 @@ module.exports = {
             letterSpacing: '1.6',
           },
         ],
+        xl: [
+          '20px',
+          {
+            letterSpacing: '1.5',
+          },
+        ],
+
+        '2xl': [
+          '24px',
+          {
+            letterSpacing: '1.5',
+          },
+        ],
 
         '3xl': [
           '30px',
           {
-            letterSpacing: '1.8',
+            letterSpacing: '1.5',
+          },
+        ],
+
+        '4xl': [
+          '40px',
+          {
+            letterSpacing: '1.5',
           },
         ],
 
