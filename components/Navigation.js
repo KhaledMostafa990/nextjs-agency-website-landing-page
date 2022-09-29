@@ -52,20 +52,18 @@ function Navigation() {
     <header
       ref={headerRef}
       className='
-    header container fixed bg-background-base 
+    header container fixed [&.scrolled-down]:bg-background-base 
     [&.scrolled-down]:shadow-md shadow-neutral-300 transition-all duration-[0.65s] '
     >
       <div className='col-start-2 col-span-10 3xl:col-start-3 3xl:col-span-8 flex justify-between items-center py-4 xl:py-8 [&.scrolled-down]:py-1.5 [&.scrolled-down]:xl:py-3.5 transition-all duration-[0.65s]  '>
         {/* header Buttons */}
         <div className='flex gap-6 xl:gap-12 items-center justify-center order-6'>
-          {/* Login */}
           <button className=' py-3 text-heading-base capitalize font-semibold flex items-center justify-center gap-3'>
             <Image src={lockIcon} width={18} height={20} alt={'logo img'} />
             <span className='block'>login</span>
           </button>
 
-          {/* Login */}
-          <button className='hidden lg:block bg-primary-base/30 px-5 py-2.5 text-primary-base rounded-lg capitalize font-semibold'>
+          <button className='hidden lg:block bg-primary-base/60 px-5 py-2.5 text-primary-600 rounded-lg capitalize font-semibold'>
             get Started
           </button>
 
@@ -96,14 +94,14 @@ function Navigation() {
         {/* OverLay on menu active*/}
         <div
           ref={overlayRef}
-          className='lg:hidden w-screen absolute left-0 top-0 h-screen transition-colors duration-700 [&.active]:bg-black/50'
+          className='lg:hidden w-screen absolute left-0 top-0 [&.active]:h-screen transition-colors duration-700 [&.active]:bg-black/50'
         />
 
         {/* Navigation items*/}
         <nav
           id='nav'
           ref={navRef}
-          className='nav h-screen absolute top-0 bg-white min-w-[80%] max-w-xs transition-transform duration-1000 [&.active]:block right-0 translate-x-[100%] [&.active]:translate-x-[0%] z-10 pt-28 lg:min-w-fit lg:static lg:h-fit lg:w-fit lg:p-0 lg:translate-x-0 '
+          className='nav h-screen absolute top-0 [&.active]:bg-white min-w-[80%] max-w-xs transition-transform duration-1000 [&.active]:block right-0 translate-x-[100%] [&.active]:translate-x-[0%] z-10 pt-28 lg:min-w-fit lg:static lg:h-fit lg:w-fit lg:p-0 lg:translate-x-0 '
         >
           <figure
             className='w-32 flex items-center absolute top-6 left-8 transition-opacity duration-[3.5s] opacity-0 [&.active]:opacity-100 xl:w-fit lg:hidden'
@@ -115,7 +113,7 @@ function Navigation() {
             <li className='py-3 border-y-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03 lg:py-0 border-none'>
               <a
                 href='#home'
-                className='active capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-base lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
+                className='active capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-500 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
               >
                 home
               </a>
@@ -123,7 +121,7 @@ function Navigation() {
             <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 border-none'>
               <a
                 href='#support'
-                className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-base/80 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
+                className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-500 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
               >
                 support
               </a>
@@ -131,7 +129,7 @@ function Navigation() {
             <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 border-none'>
               <a
                 href='#Features'
-                className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-base/80 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
+                className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-500 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
               >
                 features
               </a>
@@ -139,7 +137,7 @@ function Navigation() {
             <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 border-none'>
               <a
                 href='#Pricing'
-                className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-base/80 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
+                className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-500 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
               >
                 pricing
               </a>
@@ -147,7 +145,7 @@ function Navigation() {
             <li className='py-3 border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 border-none'>
               <a
                 href='#Testimonials'
-                className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-base/80 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
+                className='capitalize text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-500 lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
               >
                 testimonials
               </a>

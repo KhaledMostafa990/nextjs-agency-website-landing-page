@@ -10,7 +10,7 @@ function PageLayout({ children }) {
     >
       <Navigation />
 
-      {/* <main>{children}</main> */}
+      <main className='container'>{children}</main>
 
       {/* <Footer /> */}
     </div>

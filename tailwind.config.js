@@ -23,7 +23,27 @@ module.exports = {
         base: [
           '16px',
           {
-            letterSpacing: '1.45px',
+            letterSpacing: '1.5',
+          },
+        ],
+        lg: [
+          '18px',
+          {
+            letterSpacing: '1.6',
+          },
+        ],
+
+        '3xl': [
+          '30px',
+          {
+            letterSpacing: '1.8',
+          },
+        ],
+
+        '6xl': [
+          '60px',
+          {
+            letterSpacing: '-1.75px',
           },
         ],
       },
@@ -31,6 +51,9 @@ module.exports = {
       colors: {
         primary: {
           base: '#FFC059',
+          500: '#9f660a',
+          600: '#7e591b',
+          700: '#724c0c',
         },
         bodytxt: {
           base: '#343D48', // body color and primary color
@@ -43,6 +66,7 @@ module.exports = {
         heading: {
           base: '#0F2137', // primary heading color
         },
+        link: '#4F96FF',
       },
     },
   },
