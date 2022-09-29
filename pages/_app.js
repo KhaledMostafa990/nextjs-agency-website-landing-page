@@ -1,11 +1,13 @@
-import Layout from '../components/Layout';
+import PageLayout from '../components/PageLayout';
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <PageLayout>
+        <Component {...pageProps} />
+      </PageLayout>
+    </>
   );
 }
 
