@@ -1,3 +1,4 @@
+import CoreFeatureSection from '../components/CoreFeatureSection';
 import FeaturesSection from '../components/FeaturesSection';
 import Hero from '../components/Hero';
 import SupportSection from '../components/SupportSection';
@@ -8,6 +9,7 @@ export default function Home({ data }) {
       <Hero />
       <SupportSection />
       <FeaturesSection accordionData={data.accordion} />
+      <CoreFeatureSection />
     </>
   );
 }
