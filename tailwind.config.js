@@ -77,6 +77,7 @@ module.exports = {
           600: '#7e591b',
           700: '#724c0c',
         },
+        secondary: '#353448',
         bodytxt: {
           base: '#343D48', // body color and primary color
           secondary: '#02073E',
