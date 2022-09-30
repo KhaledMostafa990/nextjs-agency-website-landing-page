@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  plugins: [require('@tailwindcss/aspect-ratio')],
+
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -49,7 +51,7 @@ module.exports = {
         '3xl': [
           '30px',
           {
-            letterSpacing: '1.5',
+            letterSpacing: '0px',
           },
         ],
 
@@ -86,9 +88,8 @@ module.exports = {
         heading: {
           base: '#0F2137', // primary heading color
         },
-        link: '#4F96FF',
+        link: '#3074d9',
       },
     },
   },
-  plugins: [],
 };
