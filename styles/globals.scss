@@ -3,11 +3,28 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  #scrolled-tab {
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
 }
 
 a,
 nav li {
   cursor: pointer;
+}
+.flip {
+  backface-visibility: hidden;
+  transition: all;
+  &-right {
+    transform: perspective(2000px) rotateY(-360deg);
+  }
+
+  &-left {
+    transform: perspective(2000px) rotateY(360deg);
+  }
 }
 
 .custom-hamburger-menu {
@@ -64,4 +81,9 @@ nav li {
 .container {
   @apply grid grid-cols-12;
   max-width: 100vw;
+}
+
+g,
+path {
+  fill: inherit;
 }
