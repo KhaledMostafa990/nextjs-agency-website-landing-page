@@ -1,3 +1,4 @@
+import { ButtonPrimary } from './ButtonPrimary';
 import Image from 'next/image';
 import React from 'react';
 import heroImg from '../public/images/banner.png';
@@ -42,12 +43,7 @@ function Hero() {
               </small>
             </div>
 
-            <button
-              type='submit'
-              className='w-[40%] bg-primary-base px-2 xs:px-5  h-full text-primary-700 rounded-lg capitalize text-xs sm:text-lg  font-bold shadow-md'
-            >
-              get started
-            </button>
+            <ButtonPrimary>get started</ButtonPrimary>
           </form>
           {/* Sponsored brands */}
           <div className='flex items-center gap-3'>
