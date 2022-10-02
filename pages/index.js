@@ -4,6 +4,7 @@ import FeaturesQualitySection from '../components/FeaturesQualitySection';
 import Hero from '../components/Hero';
 import Pricing from '../components/Pricing';
 import SupportSection from '../components/SupportSection';
+import Testomonials from '../components/Testomonials';
 
 export default function Home({ data }) {
   return (
@@ -17,6 +18,8 @@ export default function Home({ data }) {
       <CoreFeatureSection accordionData={data.accordion} />
       <FeaturesQualitySection featureQuality={data.featureQulity} />
       <Pricing pricing={data.pricing} />
+
+      <Testomonials testimonials={data.testimonials} />
     </>
   );
 }
@@ -187,6 +190,92 @@ export async function getStaticProps() {
         },
       ],
     },
+    testimonials: [
+      {
+        id: 1,
+        avatar: '../images/testimonials/1.png',
+        name: 'Veona Watson',
+        username: '@hi.veona',
+        text: `I would just like to compliment Estelle Pestana. She has been most professional and gone to great lengths to assist me. Her patience with me as I continuously changed my plans is to be commended. Her service re-affirms why I always choose to book through an agency instead of directly. Thank you`,
+      },
+      {
+        id: 2,
+        avatar: '../images/testimonials/2.png',
+        name: 'Minnie Horn',
+        username: '@hello.mimmie',
+        text: `I would like to take this opportunity to thank SA Places for the great service rendered to us and in particular Estelle. You got me the best place ever in just a few moments after I spoke to you.`,
+      },
+      {
+        id: 3,
+        avatar: '../images/testimonials/3.png',
+        name: 'Merryn Manley',
+        username: '@merryn.manley',
+        text: `Many thanks for you kind and efficient service. I have already and will definitely continue to recommend your services to others in the future.`,
+      },
+      {
+        id: 4,
+        avatar: '../images/testimonials/4.png',
+        name: 'Paseka Nku',
+        username: '@hey.nku',
+        text: `I would just like to compliment Estelle Pestana. She has been most professional and gone to great lengths to assist me. Her patience with me as I continuously changed my plans is to be commended. Her service re-affirms why I always choose to book through an agency instead of directly. Thank you`,
+      },
+      {
+        id: 5,
+        avatar: '../images/testimonials/5.png',
+        name: 'Cherice Justin',
+        username: '@cherice.me',
+        text: `Thank you for all your help. Your service was excellent and very FAST.`,
+      },
+      {
+        id: 6,
+        avatar: '../images/testimonials/6.png',
+        name: 'Thais Carballal',
+        username: '@myself.thais',
+        text: `For our recent trip to S.A. I booked several accommodation thru SA Places. I just wanted to tell you that everything worked out perfectly with all the bookings and also your booking was very quick and professional. I hope I have the opportunity to re-visit South Africa soon, I will then make my bookings with your company again. I will also recommend`,
+      },
+      {
+        id: 7,
+        avatar: '../images/testimonials/7.png',
+        name: 'Veona Watson',
+        username: '@hi.veona',
+        text: `I would just like to compliment Estelle Pestana. She has been most professional and gone to great lengths to assist me. Her patience with me as I continuously changed my plans is to be commended. Her service re-affirms why I always choose to book through an agency instead of directly. Thank you`,
+      },
+      {
+        id: 8,
+        avatar: '../images/testimonials/8.png',
+        name: 'Minnie Horn',
+        username: '@hello.mimmie',
+        text: `I would like to take this opportunity to thank SA Places for the great service rendered to us and in particular Estelle. You got me the best place ever in just a few moments after I spoke to you.`,
+      },
+      {
+        id: 9,
+        avatar: '../images/testimonials/1.png',
+        name: 'Veona Watson',
+        username: '@hi.veona',
+        text: `I would just like to compliment Estelle Pestana. She has been most professional and gone to great lengths to assist me. Her patience with me as I continuously changed my plans is to be commended. Her service re-affirms why I always choose to book through an agency instead of directly. Thank you`,
+      },
+      {
+        id: 10,
+        avatar: '../images/testimonials/2.png',
+        name: 'Minnie Horn',
+        username: '@hello.mimmie',
+        text: `I would like to take this opportunity to thank SA Places for the great service rendered to us and in particular Estelle. You got me the best place ever in just a few moments after I spoke to you.`,
+      },
+      {
+        id: 12,
+        avatar: '../images/testimonials/4.png',
+        name: 'Cherice Justin',
+        username: '@cherice.me',
+        text: `Thank you for all your help. Your service was excellent and very FAST.`,
+      },
+      {
+        id: 11,
+        avatar: '../images/testimonials/5.png',
+        name: 'Thais Carballal',
+        username: '@myself.thais',
+        text: `For our recent trip to S.A. I booked several accommodation thru SA Places. I just wanted to tell you that everything worked out perfectly with all the bookings and also your booking was very quick and professional. I hope I have the opportunity to re-visit South Africa soon, I will then make my bookings with your company again. I will also recommend`,
+      },
+    ],
   };
 
   return {
