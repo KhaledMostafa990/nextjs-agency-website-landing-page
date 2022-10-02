@@ -4,40 +4,41 @@ import { ButtonPrimary } from './ButtonPrimary';
 export default function Pricing({ pricing }) {
   const [pricePlan, setPricePlan] = useState(pricing.monthly);
   const [activePlan, setActivePlan] = useState('monthly');
-  const togglePricingCards = (e) => {
-    const activePricing = document.querySelectorAll(
-      `.${e.target.getAttribute('data-plan')}`
-    );
+  const [hovred, setHovred] = useState(false);
 
-    activePricing.forEach((elm) => {
-      elm.classList.remove('flip', 'flip-right', 'flip-left');
+  function toggleActiveCard(card, idx) {
+    idx === 1 && card.classList.toggle('flip-left');
+    idx === 0 && card.classList.toggle('flip-right');
+    card.classList.toggle('active');
+  }
+
+  function togglePricingPlan(e) {
+    const elements = document.querySelectorAll(`.custom-card-effects`);
+    elements.forEach((card, idx) => {
+      toggleActiveCard(card, idx);
     });
 
-    if (e.target.value === 'monthly') {
-      setActivePlan('yearly');
-      setPricePlan(pricing.annual);
-      activePricing.forEach((elm, idx) => {
-        if (idx === 0) {
-          elm.classList.add('flip', 'flip-right');
-        }
-        elm.classList.add('flip', 'flip-left');
-        console.log(elm);
-      });
-    } else {
-      setActivePlan('monthly');
-      setPricePlan(pricing.monthly);
-      activePricing.forEach((elm, idx) => {
-        if (idx === 0) {
-          elm.classList.remove('flip', 'flip-right');
-        }
-        elm.classList.remove('flip', 'flip-left');
-      });
-    }
-  };
+    setTimeout(() => {
+      if (e.target.value === 'monthly') {
+        setActivePlan('annual');
+        setPricePlan(pricing.annual);
+      } else if (e.target.value === 'annual') {
+        setActivePlan('monthly');
+        setPricePlan(pricing.monthly);
+      }
+    }, 150);
+  }
+
+  function handleCardClick(e) {
+    const cardConatier = [...e.currentTarget.parentElement.children];
+    cardConatier.forEach((card, idx) => {
+      toggleActiveCard(card, idx);
+    });
+  }
 
   return (
     <section className='col-span-12 container h-full py-24 xl:pb-28 bg-background-secondary '>
-      <div className='col-span-12 md:col-start-2 md:col-span-12 xl:col-start-2 xl:col-span-12 3xl:col-start-3 flex flex-col gap-10 md:gap-16 overflow-hidden items-center justify-center'>
+      <div className='col-span-12 md:col-start-2 md:col-span-10 3xl:col-start-3 3xl:col-span-8 flex flex-col gap-10 md:gap-16 overflow-hidden items-center justify-center'>
         <div className='flex flex-col items-center gap-20 xl:gap-32 px-4 py-24'>
           {/** Intro **/}
           <div className='flex flex-col gap-10 items-center'>
@@ -60,8 +61,7 @@ export default function Pricing({ pricing }) {
                 <input
                   type={'checkbox'}
                   value={activePlan}
-                  onChange={togglePricingCards}
-                  data-plan={activePlan}
+                  onClick={togglePricingPlan}
                   className={
                     'bg-primary-base relative w-16 h-8 block appearance-none rounded-full checked:before:translate-x-full before:transition-transform before:duration-500  before:absolute before:w-1/2 before:h-full before:bg-white before:rounded-full before:shadow-md before:shadow-neutral-500 '
                   }
@@ -76,16 +76,19 @@ export default function Pricing({ pricing }) {
           {/* Intro End */}
 
           {/** Pricing Cards **/}
-          <div className='flex flex-col lg:flex-row gap-8 md:gap-16 xl:gap-8 items-center transition-all duration-700'>
-            {pricePlan.map((plan, idx) => {
+          <div className='flex flex-col lg:flex-row gap-8 md:gap-16 lg:gap-0 items-center transition-all duration-700'>
+            {pricePlan.map((plan, idx, array) => {
               return (
                 // Card
                 <div
                   key={plan.packName}
-                  className={`${activePlan} max-w-[420px] xl:max-w-[500px] py-10 md:py-20 px-6 md:px-12 bg-background-base rounded-md shadow-xl lg:shadow-md flex flex-col gap-6 md:gap-8 lg:[&.active]:shadow-2xl lg:[&.active]:scale-[1.09] lg:[&.active]:translate-x-[-5rem] duration-300
-                  ${idx === 1 && 'active'}   
-                  flip         
-                  `}
+                  className={`
+                  custom-card-effects flip max-w-[420px] xl:max-w-[500px] py-10 md:py-20 px-6 md:px-12 bg-background-base rounded-md shadow-xl lg:shadow-md flex flex-col gap-6 md:gap-8 lg:[&.active]:shadow-2xl  ${
+                    idx === 1 && 'active'
+                  }  `}
+                  onMouseEnter={(e) => hovred && handleCardClick(e)}
+                  onMouseOver={(e) => setHovred(true)}
+                  onMouseLeave={(e) => setHovred(false)}
                 >
                   {/* Card intro */}
                   <div className='flex flex-col gap-2 border-b-2 pb-6 '>

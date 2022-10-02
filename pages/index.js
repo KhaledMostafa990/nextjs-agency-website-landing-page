@@ -161,7 +161,6 @@ export async function getStaticProps() {
         {
           packName: 'Premium Pack',
           price: '$309.99/mo',
-
           audience: 'For the Pro users who work with modern data stack',
           benefits: [
             {
