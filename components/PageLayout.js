@@ -4,15 +4,12 @@ import Navigation from './Navigation';
 
 function PageLayout({ children }) {
   return (
-    <div
-      id='page'
-      className='font-primary bg-background-base text-base h-[2000px]'
-    >
+    <div id='page' className='font-primary bg-background-base text-base'>
       <Navigation />
 
       <main className='container'>{children}</main>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

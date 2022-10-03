@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import logo from '../public/images/logo.png';
-import lockIcon from '../public/images/icons/lock.png';
+import { Logo } from './Logo';
 
 function Navigation() {
   const logoRef = useRef();
@@ -59,7 +57,12 @@ function Navigation() {
         {/* header Buttons */}
         <div className='flex gap-6 xl:gap-12 items-center justify-center order-6'>
           <button className=' py-3 text-heading-base capitalize font-semibold flex items-center justify-center gap-3'>
-            <Image src={lockIcon} width={18} height={20} alt={'logo img'} />
+            <img
+              src={'../images/icons/lock.png'}
+              width={18}
+              height={20}
+              alt={'logo img'}
+            />
             <span className='block'>login</span>
           </button>
 
@@ -86,10 +89,7 @@ function Navigation() {
           </div>
         </div>
 
-        {/*logo*/}
-        <figure className='flex items-center w-32 h-full xl:w-fit'>
-          <Image src={logo} alt={'logo img'} />
-        </figure>
+        <Logo />
 
         {/* OverLay on menu active*/}
         <div
@@ -103,12 +103,13 @@ function Navigation() {
           ref={navRef}
           className='nav h-screen absolute top-0 [&.active]:bg-white min-w-[80%] max-w-xs transition-transform duration-1000 [&.active]:block right-0 translate-x-[100%] [&.active]:translate-x-[0%] z-20 pt-28 lg:min-w-fit lg:static lg:h-fit lg:w-fit lg:p-0 lg:translate-x-0 '
         >
-          <figure
-            className='w-32 flex items-center absolute top-6 left-8 transition-opacity duration-[3.5s] opacity-0 [&.active]:opacity-100 xl:w-fit lg:hidden'
-            ref={logoRef}
-          >
-            <Image src={logo} alt={'logo img'} />
-          </figure>
+          <div ref={logoRef} className={'w-fit h-fit'}>
+            <Logo
+              Wrapperclasses={
+                'w-32 flex items-center absolute top-6 left-8 transition-opacity duration-[3.5s] opacity-0 [&.active]:opacity-100 xl:w-fit lg:hidden'
+              }
+            />
+          </div>
           <ul className='pl-8 md:pl-16 lg:pl-0 flex flex-col lg:flex-row'>
             <li className='py-3 border-y-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03 lg:py-0 lg:border-none'>
               <a
