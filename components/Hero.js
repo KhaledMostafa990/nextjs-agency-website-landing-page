@@ -1,10 +1,12 @@
-import { ButtonPrimary } from './ButtonPrimary';
+import { ContactForm } from './ContactForm';
+
 import Image from 'next/image';
 import React from 'react';
 import heroImg from '../public/images/banner.png';
 import paypalSpons from '../public/images/paypal.png';
 import googleSpons from '../public/images/google.png';
 import dropbox from '../public/images/dropbox.png';
+import { ButtonPrimary } from './ButtonPrimary';
 function Hero() {
   return (
     <section className='bg-primary-base/10 col-span-12 container xl:min-h-screen h-full pb-10 lg:pb-20'>
@@ -21,35 +23,24 @@ function Hero() {
             Get your tests delivered at let home collect sample from the victory
             of the managments that supplies best design system guidelines ever.
           </p>
-
-          <form
-            id='contact-form'
-            className='flex w-full gap-2 lg:items-start max-w-md'
-          >
-            <div id='form-control' className='w-[85%] flex relative shadow-xl'>
-              <input
-                type='text'
-                name='email'
-                placeholder='Enter Email address'
-                id='email-contact'
-                className='bg-background-base text-bodytxt-base/80 w-full text-sm px-4 xl:px-12 py-3 block rounded-md'
-              />
-
-              <small
-                id='input-msg'
-                className='hidden text-primary-base absolute w-full top-[3.44rem] text-[.7rem] text-center'
-              >
-                Please enter an valid email address
-              </small>
-            </div>
-
-            <ButtonPrimary>get started</ButtonPrimary>
-          </form>
+          <div className='w-full flex justify-center'>
+            <ContactForm
+              successMessage={'Thanks you'}
+              errorMessege={'Please inter a valid email address '}
+            >
+              <div className={`h-full sm:w-[60%]`}>
+                <ButtonPrimary className={'sm:text-base'}>
+                  Subscribe us
+                </ButtonPrimary>
+              </div>
+            </ContactForm>
+          </div>
           {/* Sponsored brands */}
           <div className='flex items-center gap-3'>
             <strong className='font-light text-bodytxt-base/80 flex-2'>
               Sponsored by:
             </strong>
+
             <ul className='flex items-center gap-3 flex-1'>
               <li>
                 <Image alt='paypal sponser icon' src={paypalSpons} width={60} />

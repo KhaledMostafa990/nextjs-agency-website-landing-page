@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import CoreFeatureSection from '../components/CoreFeatureSection';
 import FeaturesQualitySection from '../components/FeaturesQualitySection';
+import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import Pricing from '../components/Pricing';
 import SupportSection from '../components/SupportSection';
@@ -18,7 +19,6 @@ export default function Home({ data }) {
       <CoreFeatureSection accordionData={data.accordion} />
       <FeaturesQualitySection featureQuality={data.featureQulity} />
       <Pricing pricing={data.pricing} />
-
       <Testomonials testimonials={data.testimonials} />
     </>
   );
