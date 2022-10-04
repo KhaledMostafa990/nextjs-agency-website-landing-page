@@ -20,7 +20,7 @@ function Footer() {
             </p>
           </div>
 
-          {/* Form */}
+          {/* Contact Form */}
           <div className='w-full h-full flex justify-center'>
             <ContactForm
               successMessage={'Thanks you'}
@@ -45,10 +45,11 @@ function Footer() {
             <div className='flex flex-col lg:flex-row gap-7 lg:gap-1 items-center'>
               <Logo white />
 
-              <h4 class='text-white/70 text-[9px] xl:text-[10px] text-center lg:text-start'>
+              {/* CopyRights */}
+              <h4 className='text-white/70 text-[9px] xl:text-[10px] text-center lg:text-start'>
                 &copy; Copyright {new Date().getFullYear()} GUI Design by{' '}
                 <a href='https://startuplanding.redq.io/'>StartupLanding</a>
-                <span class='block md:inline'>
+                <span className='block md:inline'>
                   {' '}
                   Coded by<a href='#'> Khaled.</a>
                 </span>

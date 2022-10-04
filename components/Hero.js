@@ -9,7 +9,10 @@ import dropbox from '../public/images/dropbox.png';
 import { ButtonPrimary } from './ButtonPrimary';
 function Hero() {
   return (
-    <section className='bg-primary-base/10 col-span-12 container xl:min-h-screen h-full pb-10 lg:pb-20'>
+    <section
+      data-section='home'
+      className='bg-primary-base/10 col-span-12 container xl:min-h-screen h-full pb-10 lg:pb-20'
+    >
       <div className='w-full col-start-2 col-span-10 3xl:col-start-3 3xl:col-span-8 flex flex-col gap-12 lg:justify-between pt-36 lg:pt-40 xl:pt-56 lg:flex-row lg:place-self-center xl:justify-between'>
         {/* Hero Text Content */}
         <div className='flex flex-col gap-7 md:gap-10  justify-start md:items-center lg:items-start flex-1'>
@@ -23,18 +26,20 @@ function Hero() {
             Get your tests delivered at let home collect sample from the victory
             of the managments that supplies best design system guidelines ever.
           </p>
+          {/* Conatct Form */}
           <div className='w-full flex justify-center'>
             <ContactForm
               successMessage={'Thanks you'}
               errorMessege={'Please inter a valid email address '}
             >
               <div className={`h-full sm:w-[60%]`}>
-                <ButtonPrimary className={'sm:text-base'}>
-                  Subscribe us
+                <ButtonPrimary className={'sm:text-base text-white'}>
+                  get started
                 </ButtonPrimary>
               </div>
             </ContactForm>
           </div>
+
           {/* Sponsored brands */}
           <div className='flex items-center gap-3'>
             <strong className='font-light text-bodytxt-base/80 flex-2'>

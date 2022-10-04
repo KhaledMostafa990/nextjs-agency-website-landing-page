@@ -1,11 +1,10 @@
 import Head from 'next/head';
 import CoreFeatureSection from '../components/CoreFeatureSection';
 import FeaturesQualitySection from '../components/FeaturesQualitySection';
-import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import Pricing from '../components/Pricing';
 import SupportSection from '../components/SupportSection';
-import Testomonials from '../components/Testomonials';
+import Testimonials from '../components/Testimonials';
 
 export default function Home({ data }) {
   return (
@@ -19,10 +18,11 @@ export default function Home({ data }) {
       <CoreFeatureSection accordionData={data.accordion} />
       <FeaturesQualitySection featureQuality={data.featureQulity} />
       <Pricing pricing={data.pricing} />
-      <Testomonials testimonials={data.testimonials} />
+      <Testimonials testimonials={data.testimonials} />
     </>
   );
 }
+
 export async function getStaticProps() {
   const data = {
     accordion: [

@@ -1,9 +1,12 @@
 import React from 'react';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-export default function Testomonials({ testimonials }) {
+export default function Testimonials({ testimonials }) {
   return (
-    <section className='col-span-12 container h-full py-20 bg-primary-base/10'>
+    <section
+      data-section='testimonials'
+      className='col-span-12 container h-full py-20 bg-primary-base/10'
+    >
       <div className='col-span-12 flex flex-col gap-16 items-center justify-center'>
         <div className='flex flex-col gap-3 items-center'>
           <h3 className='text-xl sm:text-2xl md:text-3xl xl:text-4xl text-heading-base text-center font-bold'>

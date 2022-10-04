@@ -37,9 +37,12 @@ export default function Pricing({ pricing }) {
   }
 
   return (
-    <section className='col-span-12 container h-full py-24 xl:pb-28 bg-background-secondary '>
-      <div className='col-span-12 md:col-start-2 md:col-span-10 3xl:col-start-3 3xl:col-span-8 flex flex-col gap-10 md:gap-16 overflow-hidden items-center justify-center'>
-        <div className='flex flex-col items-center gap-20 xl:gap-32 px-4 py-24'>
+    <section
+      data-section='pricing'
+      className='col-span-12 container h-full py-12 xl:pb-20 bg-background-secondary '
+    >
+      <div className='col-span-12 md:col-start-2 md:col-span-10 3xl:col-start-3 3xl:col-span-8 flex flex-col gap-8 md:gap-14 overflow-hidden items-center justify-center'>
+        <div className='flex flex-col items-center gap-20 xl:gap-28 px-4 py-24'>
           {/** Intro **/}
           <div className='flex flex-col gap-10 items-center'>
             <div className='flex flex-col gap-3'>
@@ -57,13 +60,13 @@ export default function Pricing({ pricing }) {
               <span className='text-heading-base xl:text-lg font-medium'>
                 Monthly plan
               </span>
-              <button className='p-1 xl:p-2 w-fit bg-primary-base rounded-full'>
+              <button className='p-[3px] xl:p-[4px] w-fit h-fit bg-primary-base rounded-full pointer-events-auto'>
                 <input
                   type={'checkbox'}
                   value={activePlan}
                   onClick={togglePricingPlan}
                   className={
-                    'bg-primary-base relative w-16 h-8 block appearance-none rounded-full checked:before:translate-x-full before:transition-transform before:duration-500  before:absolute before:w-1/2 before:h-full before:bg-white before:rounded-full before:shadow-md before:shadow-neutral-500 '
+                    'min-w-full min-h-full bg-primary-base cursor-pointer relative w-16 h-8 block appearance-none rounded-full checked:before:translate-x-full before:transition-transform before:duration-500  before:absolute before:w-1/2 before:h-full before:bg-white before:rounded-full before:shadow-md before:shadow-neutral-500 '
                   }
                 />
               </button>

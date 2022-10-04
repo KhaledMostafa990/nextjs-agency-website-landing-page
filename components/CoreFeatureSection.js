@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import rightArrow from '../public/images/icons/right-arrow.png';
 import emoji from '../public/images/icons/emoji.png';
-import messenger from '../public/images/messenger.png';
 import Image from 'next/image';
 export default function CoreFeatureSection({ accordionData }) {
   return (
     <>
-      <section className='col-span-12 container h-full py-10 xl:pb-28'>
-        <div className='col-start-2 col-span-10 3xl:col-start-3 3xl:col-span-8  flex flex-col gap-4 xl:flex-row xl:justify-between xl:gap-0'>
+      <section
+        data-section='features'
+        className='col-span-12 container h-full py-10 xl:pb-28'
+      >
+        <div className='col-start-2 col-span-10 3xl:col-start-3 3xl:col-span-8  flex flex-col gap-4 lg:flex-row lg:justify-between lg:gap-0'>
           {/* Feature image */}
           <figure className='place-self-center xl:w-full'>
-            <Image
-              src={messenger}
-              width={800}
+            <img
+              className='object-fit'
+              src={'../images/messenger.png'}
+              width={750}
               height={850}
               layout='intrinsic'
               alt='premium feature'
@@ -20,11 +23,11 @@ export default function CoreFeatureSection({ accordionData }) {
           </figure>
 
           {/* Feature description */}
-          <div className='flex flex-col gap-8 xl:w-[85%] 2xl:w-[75%]'>
+          <div className='flex flex-col gap-8 lg:w-[65%] 2xl:w-[75%]'>
             {/* Intro */}
-            <div className='flex flex-col gap-4 md:items-center xl:items-start'>
-              <h2 className='text-xl sm:text-2xl md:text-3xl xl:text-4xl text-heading-base font-bold text-start md:text-center xl:text-start'>
-                <span className='md:block xl:inline'>
+            <div className='flex flex-col gap-4 md:items-center lg:items-start'>
+              <h2 className='text-xl sm:text-2xl md:text-3xl xl:text-4xl text-heading-base font-bold text-start md:text-center lg:text-start'>
+                <span className='md:block lg:inline'>
                   Meet our premium features that
                 </span>
                 <span> will make you wow</span>
@@ -39,7 +42,7 @@ export default function CoreFeatureSection({ accordionData }) {
                 </figure>
               </h2>
 
-              <p className='text-heading-base text-start md:text-center xl:text-start font-light leading-7 md:text-lg max-w-md md:max-w-lg '>
+              <p className='text-heading-base text-start md:text-center lg:text-start font-light leading-7 md:text-lg max-w-md md:max-w-lg '>
                 Build an incredible workplace and grow your business with
                 Gusto's all-in-one platform with amazing contents.
               </p>
@@ -49,7 +52,7 @@ export default function CoreFeatureSection({ accordionData }) {
             {/* Accordion  */}
             <div className='flex flex-col gap-4  xl-gap-6'>
               {accordionData.map(({ heading, desc }) => (
-                <Accordion heading={heading} description={desc} />
+                <Accordion key={heading} heading={heading} description={desc} />
               ))}
             </div>
             {/* Accordion End*/}

@@ -5,7 +5,10 @@ import rightArrow from '../public/images/icons/right-arrow.png';
 
 function SupportSection() {
   return (
-    <section className='col-span-12 container h-full py-24 md:py-40'>
+    <section
+      data-section='support'
+      className='col-span-12 container h-full py-24 md:py-40'
+    >
       <div className='col-start-2 col-span-10 3xl:col-start-3 3xl:col-span-8 flex flex-col gap-14 md:flex-row md:gap-4 xl:gap-12'>
         {/* Support card */}
         <SupportCard />

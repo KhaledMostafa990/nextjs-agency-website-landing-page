@@ -24,6 +24,15 @@ nav li {
   --perspective: 2250px;
   transform: perspective(2600px) rotateY(0deg);
 
+  @layer base {
+    html {
+      scroll-behavior: smooth;
+
+      body {
+        scroll-behavior: smooth;
+      }
+    }
+  }
   @media screen and (min-width: 1024px) {
     &.flip {
       &-right {
