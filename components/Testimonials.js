@@ -1,4 +1,5 @@
 import React from 'react';
+import { Mousewheel } from 'swiper';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 export default function Testimonials({ testimonials }) {
@@ -20,27 +21,16 @@ export default function Testimonials({ testimonials }) {
         <div className='w-full h-full'>
           <Swiper
             loop={true}
-            centeredSlides={true}
+            loopedSlides={3}
             grabCursor={true}
-            slidesPerView={1}
-            loopedSlides={12}
-            loopedSlidesLimit={false}
-            loopPreventsSlide={true}
+            centeredSlides={true}
+            centeredSlidesBounds={true}
+            modules={[Mousewheel]}
+            direction={'horizontal'}
+            mousewheel={{ invert: true }}
             draggable={true}
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-              },
-              640: {
-                slidesPerView: 2,
-              },
-              1280: {
-                slidesPerView: 3,
-              },
-              1600: {
-                slidesPerView: 'auto',
-              },
-            }}
+            slidesPerView={'auto'}
+            passiveListeners={true}
           >
             {testimonials.map((testimonial, idx, array) => {
               const fromLeft = idx;
@@ -52,7 +42,7 @@ export default function Testimonials({ testimonials }) {
                 >
                   <div
                     className={
-                      'flex flex-col items-center gap-6 px-5 py-8 justify-evenly h-full'
+                      'flex flex-col items-center gap-6 px-5 py-8 justify-evenly h-full '
                     }
                   >
                     <Testimonial data={array[fromLeft]} />
@@ -69,8 +59,8 @@ export default function Testimonials({ testimonials }) {
 }
 function Testimonial({ data }) {
   return (
-    <div className='bg-background-secondary min-h-fit min-w-fit max-w-[290px] py-6 px-5 flex flex-col gap-6 md:gap-8 rounded-lg drop-shadow-xl '>
-      <p className='text-heading-base/80 text-start font-light leading-5 text-xs  lg:text-lg max-w-md md:max-w-lg select-none'>
+    <div className='bg-background-secondary min-h-fit min-w-fit max-w-[290px] py-6 px-5 flex flex-col gap-6 md:gap-8 rounded-sm drop-shadow-sm hover:drop-shadow-lg transition-all duration-700 '>
+      <p className='text-heading-base/80 text-start font-light leading-5 text-xs  lg:text-lg max-w-md md:max-w-lg lg:min-w-[400px] select-none'>
         {data.text}
       </p>
 

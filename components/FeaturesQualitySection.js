@@ -9,9 +9,9 @@ export default function FeaturesQualitySection({ featureQuality }) {
     const tabBtn = clickedElement.querySelector('button');
     const length = clickedElement.getAttribute('data-length');
 
+    const tabItems = [...tabBtn.parentElement.parentElement.children];
     const activeSlide = document.getElementById(`item${length}`);
     const slidesConatiner = activeSlide.parentElement;
-    const tabItems = [...tabBtn.parentElement.parentElement.children];
 
     [...slidesConatiner.children].forEach((elm, idx) => {
       elm.classList.add('invisible', 'opacity-0');
@@ -19,10 +19,6 @@ export default function FeaturesQualitySection({ featureQuality }) {
       tabItems[idx].firstElementChild.classList.remove('active');
     });
 
-    // svgIcon.querySelectorAll('path').forEach((p) => {
-    // p.style.opacity = 1;
-    // p.parentElement.style.opacity = 1;
-    // });
     svgIcon.classList.add('active');
     tabBtn.classList.add('active');
 
@@ -31,7 +27,7 @@ export default function FeaturesQualitySection({ featureQuality }) {
   };
 
   return (
-    <section className='col-span-12 container h-full py-10 xl:pb-28 bg-secondary'>
+    <section className='col-span-12 container h-full py-10 xl:pb-0 bg-secondary'>
       <div className='col-start-2 col-span-10 xl:col-start-2 xl:col-span-12 3xl:col-start-3 flex flex-col gap-10 md:gap-16 overflow-hidden'>
         {/* Tabs */}
         <div id='scrolled-tab' className='overflow-x-scroll'>
@@ -42,7 +38,7 @@ export default function FeaturesQualitySection({ featureQuality }) {
                   key={name}
                   data-length={`${idx}`}
                   onClick={handleClickSlider}
-                  className='snap-mandatory snap-start min-w-fit flex-1 flex md:flex-col items-center md:items-start gap-2 md:gap-3'
+                  className='snap-mandatory snap-start min-w-fit flex-1 flex md:flex-col items-center md:items-start gap-2 md:gap-3 cursor-pointer'
                 >
                   {/* Svg icon */}
                   <svg
@@ -58,7 +54,11 @@ export default function FeaturesQualitySection({ featureQuality }) {
                     {svgs[idx]}
                   </svg>
 
-                  <button className='md:border-t-2 md:pt-2 text-sm lg:text-lg md:[&.active]:border-primary-base text-white [&.active]:text-primary-base pointer-events-none transition-colors  duration-700'>
+                  <button
+                    className={`md:border-t-2 md:pt-2 text-sm lg:text-lg md:[&.active]:border-primary-base text-white [&.active]:text-primary-base pointer-events-none transition-colors  duration-700 ${
+                      idx === 0 && 'active'
+                    }`}
+                  >
                     {name}
                   </button>
                 </li>
@@ -69,7 +69,7 @@ export default function FeaturesQualitySection({ featureQuality }) {
         {/* Tabs End */}
 
         {/* Feature items */}
-        <div className='flex  items-center relative transition-all  duration-700'>
+        <div className='flex  items-center relative transition-all  duration-700  xl:pb-10'>
           {featureQuality.map(({ name, heading, desc }, idx) => (
             <div
               key={name}
@@ -78,10 +78,11 @@ export default function FeaturesQualitySection({ featureQuality }) {
                 idx === 0 ? 'visible opacity-100' : 'invisible opacity-0'
               } `}
             >
-              <figure className='aspect-w-7 aspect-h-5 xl:aspect-w-10 xl:aspect-h-4 xl:w-full xl:left-16'>
+              <figure className='aspect-w-7 aspect-h-5 xl:aspect-w-12 xl:aspect-h-5 xl:w-full xl:left-12 xl:top-14'>
                 <img
                   className='object-cover rounded-md'
                   src='../images/dashboard.png'
+                  alt='dashboard'
                 />
               </figure>
 
@@ -94,8 +95,8 @@ export default function FeaturesQualitySection({ featureQuality }) {
                   {desc}
                 </p>
 
-                <div>
-                  <ButtonPrimary className='text-white'>
+                <div className='w-fit'>
+                  <ButtonPrimary className='text-white border-2 border-transparent hover:bg-black hover:border-white shadow-none transition-all duration-500'>
                     More Details
                   </ButtonPrimary>
                 </div>

@@ -85,23 +85,23 @@ export async function getStaticProps() {
           benefits: [
             {
               name: 'Ultimate access to all course, exercises and assessments',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Free acess for all kind of exercise corrections with downloads.',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Total assessment corrections with free download access system',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Unlimited download of courses on the mobile app contents',
-              avaliable: false,
+              available: false,
             },
             {
               name: 'Download and print courses and exercises in PDF',
-              avaliable: false,
+              available: false,
             },
           ],
         },
@@ -112,23 +112,23 @@ export async function getStaticProps() {
           benefits: [
             {
               name: 'Ultimate access to all course, exercises and assessments',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Free acess for all kind of exercise corrections with downloads.',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Total assessment corrections with free download access system',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Unlimited download of courses on the mobile app contents',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Download and print courses and exercises in PDF',
-              avaliable: true,
+              available: true,
             },
           ],
         },
@@ -141,23 +141,23 @@ export async function getStaticProps() {
           benefits: [
             {
               name: 'Ultimate access to all course, exercises and assessments',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Free acess for all kind of exercise corrections with downloads.',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Total assessment corrections with free download access system',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Unlimited download of courses on the mobile app contents',
-              avaliable: false,
+              available: false,
             },
             {
               name: 'Download and print courses and exercises in PDF',
-              avaliable: false,
+              available: false,
             },
           ],
         },
@@ -168,23 +168,23 @@ export async function getStaticProps() {
           benefits: [
             {
               name: 'Ultimate access to all course, exercises and assessments',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Free acess for all kind of exercise corrections with downloads.',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Total assessment corrections with free download access system',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Unlimited download of courses on the mobile app contents',
-              avaliable: true,
+              available: true,
             },
             {
               name: 'Download and print courses and exercises in PDF',
-              avaliable: true,
+              available: true,
             },
           ],
         },

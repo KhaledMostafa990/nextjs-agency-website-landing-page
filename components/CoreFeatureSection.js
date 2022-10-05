@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import rightArrow from '../public/images/icons/right-arrow.png';
+import React from 'react';
 import emoji from '../public/images/icons/emoji.png';
 import Image from 'next/image';
 export default function CoreFeatureSection({ accordionData }) {
@@ -186,23 +185,20 @@ function Accordion({ heading, description }) {
   };
   return (
     <div
-      className=' transition duration-700 py-4 px-5 sm:py-6 sm:px-8 xl:py-8 w-full rounded-lg bg-background-secondary [&.active]:bg-background-base flex flex-col gap-3 shadow-lg overflow-hidden'
+      className=' bg-background-secondary py-4 px-5 sm:py-6 sm:px-8 xl:py-8 w-full h-[4.5rem] [&.active]:h-[11rem] flex flex-col gap-3 rounded-lg [&.active]:bg-background-base drop-shadow-md hover:drop-shadow-xl [&.active]:drop-shadow-xl  transition-all duration-1000 cursor-pointer overflow-hidden'
       onClick={handleOpen}
     >
       <h3 className='text-bodytxt-secondary text-[.65rem] sm:text-sm lg:text-lg font-bold flex items-center justify-between pointer-events-none'>
         <span>{heading}</span>
-        <figure className='opacity-100 [&.active]:opacity-0 transition-opacity'>
-          <Image
-            src={rightArrow}
+        <figure className='opacity-100 [&.active]:rotate-90 [&.active]:scale-75  transition-transform duration-700'>
+          <img
+            src={'../images/icons/right-arrow.png'}
             alt={'help and support icon'}
-            layout='intrinsic'
-            width={21}
-            height={21}
           />
         </figure>
       </h3>
 
-      <p className='transition-transform duration-700  will-change-auto text-heading-base font-light leading-7 md:text-lg max-w-md md:max-w-lg opacity-0 h-0 relative translate-y-[50%] [&.active]:translate-y-[0%] [&.active]:h-fit [&.active]:opacity-100  pointer-events-none '>
+      <p className='text-heading-base font-light leading-7 md:text-lg max-w-md md:max-w-lg opacity-0 relative translate-y-[-40%] [&.active]:translate-y-[0%] [&.active]:opacity-100 pointer-events-none transition-all duration-[.84s]'>
         {description}
       </p>
     </div>

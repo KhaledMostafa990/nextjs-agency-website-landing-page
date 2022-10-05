@@ -1,11 +1,5 @@
 import { ContactForm } from './ContactForm';
-
-import Image from 'next/image';
 import React from 'react';
-import heroImg from '../public/images/banner.png';
-import paypalSpons from '../public/images/paypal.png';
-import googleSpons from '../public/images/google.png';
-import dropbox from '../public/images/dropbox.png';
 import { ButtonPrimary } from './ButtonPrimary';
 function Hero() {
   return (
@@ -47,28 +41,46 @@ function Hero() {
             </strong>
 
             <ul className='flex items-center gap-3 flex-1'>
-              <li>
-                <Image alt='paypal sponser icon' src={paypalSpons} width={60} />
+              <li className='w-full'>
+                <img
+                  className='object-cover w-120 h-50'
+                  alt='paypal sponser icon'
+                  src={'../images/paypal.png'}
+                  width={80}
+                  height={80}
+                />
               </li>
-              <li>
-                <Image alt='google sponser icon' src={googleSpons} width={60} />
+              <li className='w-full'>
+                <img
+                  className='object-cover w-120 h-50'
+                  alt='google sponser icon'
+                  src={'../images/google.png'}
+                  width={80}
+                  height={80}
+                />
               </li>
 
-              <li>
-                <Image alt='dropbox sponser icon' src={dropbox} width={60} />
+              <li className='w-full'>
+                <img
+                  className='object-cover w-120 h-50'
+                  alt='dropbox sponser icon'
+                  src={'../images/dropbox.png'}
+                  width={80}
+                  height={80}
+                />
               </li>
             </ul>
           </div>
         </div>
 
         {/* Hero img */}
-        <div className='flex justify-center flex-1 items-center'>
-          <figure>
-            <Image
-              width={740}
-              height={480}
-              layout='intrinsic'
-              src={heroImg}
+        <div className='flex justify-center flex-1 items-center w-full'>
+          <figure className='block aspect-w-3 aspect-h-2 w-full'>
+            <img
+              // width={740}
+              // height={480}
+              className='object-cover'
+              src={'../images/banner.png'}
               alt={'Ultimate support system'}
             />
           </figure>

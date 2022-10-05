@@ -29,7 +29,11 @@ function Footer() {
               dark
             >
               <div className={`h-full w-full md:w-fit`}>
-                <ButtonPrimary className={'text-white sm:text-base'}>
+                <ButtonPrimary
+                  className={
+                    'text-white sm:text-base border-2 hover:border-white border-transparent hover:bg-transparent shadow-none transition-all duration-700'
+                  }
+                >
                   Subscribe us
                 </ButtonPrimary>
               </div>
@@ -75,7 +79,7 @@ function Footer() {
               </li>
               <li className='pl-2'>
                 <a
-                  href='#Features'
+                  href='#features'
                   className='capitalize text-white text-xs md:text-base font-medium lg:px-2 xl:px-4 '
                 >
                   features
@@ -83,7 +87,7 @@ function Footer() {
               </li>
               <li className='pl-2'>
                 <a
-                  href='#Pricing'
+                  href='#pricing'
                   className='capitalize text-white text-xs md:text-base font-medium lg:px-2 xl:px-4 '
                 >
                   pricing
@@ -91,7 +95,7 @@ function Footer() {
               </li>
               <li className='pl-2'>
                 <a
-                  href='#Testimonials'
+                  href='#testimonials'
                   className='capitalize text-white text-xs md:text-base font-medium lg:px-2 xl:px-4 '
                 >
                   testimonials
