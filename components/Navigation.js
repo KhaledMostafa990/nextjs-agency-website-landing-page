@@ -28,11 +28,11 @@ function Navigation() {
 
   useEffect(() => {
     handleHeaderOnScroll(scrollLength);
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize, { passive: true });
+      window.removeEventListener('scroll', handleScroll, { passive: true });
     };
   }, [handleResize, handleScroll]);
 
@@ -94,9 +94,8 @@ function Navigation() {
             className=' py-3 text-heading-base capitalize font-semibold flex items-center justify-center gap-3'
           >
             <img
+              className='object-cover w-35 h-45'
               src={'../images/icons/lock.png'}
-              width={18}
-              height={20}
               alt={'logo img'}
             />
             <span className='block'>login</span>

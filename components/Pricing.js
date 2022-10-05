@@ -35,7 +35,6 @@ export default function Pricing({ pricing }) {
       toggleActiveCard(card, idx);
     });
   }
-
   return (
     <section
       data-section='pricing'
@@ -64,11 +63,15 @@ export default function Pricing({ pricing }) {
                 <input
                   type={'checkbox'}
                   value={activePlan}
+                  id='toggle-checlbox'
                   onClick={togglePricingPlan}
                   className={
                     'min-w-full min-h-full bg-primary-base cursor-pointer relative w-16 h-8 block appearance-none rounded-full checked:before:translate-x-full before:transition-transform before:duration-500  before:absolute before:w-1/2 before:h-full before:bg-white before:rounded-full before:shadow-md before:shadow-neutral-500 '
                   }
                 />
+                <label htmlFor='toggle-checlbox' className='sr-only'>
+                  toggle pricing card from monthly to annual
+                </label>
               </button>
               <span className='text-heading-base xl:text-lg font-medium'>
                 Annual plan
@@ -86,11 +89,13 @@ export default function Pricing({ pricing }) {
                 <div
                   key={plan.packName}
                   className={`
-                  custom-card-effects flip max-w-[420px] xl:max-w-[500px] py-10 md:py-20 px-6 md:px-12 bg-background-base rounded-md shadow-xl lg:shadow-md flex flex-col gap-6 md:gap-8 lg:[&.active]:shadow-2xl  ${
+                  custom-card-effects flip max-w-[420px] xl:max-w-[500px] py-10 md:py-16 px-6 md:px-10 bg-background-base rounded-md shadow-xl lg:shadow-md flex flex-col gap-6 md:gap-8 lg:[&.active]:shadow-2xl  ${
                     idx === 1 && 'active'
                   }  `}
                   onMouseEnter={(e) => hovred && handleCardClick(e)}
-                  onMouseOver={(e) => setHovred(true)}
+                  onMouseOver={(e) =>
+                    window.innerWidth > 1024 && setHovred(true)
+                  }
                   onMouseLeave={(e) => setHovred(false)}
                 >
                   {/* Card intro */}
@@ -98,10 +103,10 @@ export default function Pricing({ pricing }) {
                     <h3 className='text-lg sm:text-xl md:text-2xl xl:text-3xl text-heading-base font-semibold'>
                       {plan.packName}
                     </h3>
-                    <h3 className='text-lg sm:text-xl md:text-2xl xl:text-3xl text-primary-500 font-semibold'>
+                    <h3 className='text-lg sm:text-xl md:text-2xl xl:text-3xl text-primary-base font-semibold'>
                       {plan.price}
                     </h3>
-                    <p className='text-heading-base/60  font-light leading-5 text-xs  lg:text-lg max-w-md md:max-w-lg'>
+                    <p className='text-heading-base/80  font-light leading-5 text-xs  lg:text-base tracking-tight max-w-md md:max-w-lg'>
                       {plan.audience}
                     </p>
                   </div>
@@ -114,11 +119,20 @@ export default function Pricing({ pricing }) {
                           key={idx}
                           className='text-heading-base/80 font-medium leading-5 text-xs  lg:text-lg max-w-md md:max-w-lg flex item'
                         >
-                          <img
-                            className='max-h-5 w-5 relative top-1'
-                            src='../images/icons/check-circle.png'
-                            alt='check success icon'
-                          />
+                          {benefit.available ? (
+                            <img
+                              className='max-h-5 w-5 relative top-1 fill-white '
+                              src='../images/icons/available.svg'
+                              alt='check success icon'
+                            />
+                          ) : (
+                            <img
+                              className='max-h-5 w-5 relative top-1 fill-white '
+                              src='../images/icons/unavailable.svg'
+                              alt='check success icon'
+                            />
+                          )}
+
                           <span className='inline-block pl-2 md:pl-4'>
                             {benefit.name}
                           </span>
@@ -128,13 +142,13 @@ export default function Pricing({ pricing }) {
                   </ul>
 
                   {/* Card Btn */}
-                  <div>
+                  <div className='w-full lg:w-fit h-fit'>
                     <ButtonPrimary
                       className={
-                        'md:h-14 md:px-8 text-base-500 bg-primary-base/70'
+                        'lg:py-7 text-white border-2 border-transparent transition-all duration-500'
                       }
                     >
-                      Start free Trail
+                      Start free trial
                     </ButtonPrimary>
                   </div>
                 </div>

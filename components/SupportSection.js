@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import support from '../public/images/support.png';
-import rightArrow from '../public/images/icons/right-arrow.png';
 
 function SupportSection() {
   return (
@@ -21,26 +19,24 @@ function SupportSection() {
 export default SupportSection;
 function SupportCard() {
   return (
-    <div className='py-5 px-5 sm:py-8 sm:px-10 xl:py-10 xl:px-12 w-full rounded-xl bg-background-base hover:bg-background-secondary flex flex-col gap-4 shadow-lg transition-colors duration-700 xl:flex-row'>
+    <div className='py-5 px-5 sm:py-8 sm:px-10 xl:py-10 xl:px-12 w-full rounded-xl bg-background-base hover:bg-background-secondary hover:shadow-2xl flex flex-col gap-4 shadow-lg transition-all duration-1000 xl:flex-row'>
       <figure className=''>
-        <Image
-          src={support}
+        <img
+          src={'../images/support.png'}
           alt={'help and support icon'}
-          layout='intrinsic'
-          width={80}
-          height={80}
+          width={100}
+          height={100}
         />
       </figure>
 
       <div className='flex flex-col gap-4 '>
         <h2 className='text-bodytxt-secondary lg:text-lg font-bold flex items-center gap-3'>
           <span>Do you need help support</span>
-          <Image
-            src={rightArrow}
+          <img
+            src={'../images/icons/right-arrow.png'}
             alt={'help and support icon'}
-            layout='intrinsic'
-            width={21}
-            height={21}
+            width={26}
+            height={26}
           />
         </h2>
 

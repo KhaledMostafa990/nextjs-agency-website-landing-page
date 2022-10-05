@@ -24,26 +24,24 @@ nav li {
   --perspective: 2250px;
   transform: perspective(2600px) rotateY(0deg);
 
-  @layer base {
-    html {
-      scroll-behavior: smooth;
-
-      body {
-        scroll-behavior: smooth;
-      }
+  &.flip {
+    &-right {
+      transform: perspective(2600px) rotateY(-360deg);
+    }
+    &-left {
+      transform: perspective(2600px) rotateY(360deg);
     }
   }
+
   @media screen and (min-width: 1024px) {
-    &.flip {
-      &-right {
-        transform: perspective(2600px) rotateY(-360deg);
-      }
-      &-left {
-        transform: perspective(2600px) rotateY(360deg);
-      }
+    &:not(&.active) button {
+      @apply lg:text-primary-base lg:bg-primary-base/20;
     }
 
     &.active {
+      button {
+        @apply hover:text-primary-base hover:bg-primary-base/0 hover:border-primary-base;
+      }
       &:first-child {
         z-index: 10;
       }
