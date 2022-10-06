@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Support agency website
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This is an awesome interactive website landing page I've created from StartupLanding Design templates in addition to many improvements over the original design.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The website has many features including the following
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Users should be able to:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- View the nav link indicator for the currently active section in view
+- view a fixed to the top navbar with a new state instead of the default
+- View the optimal layout for the site depending on their device's screen size
+- see an interactive and animated accordion
+- See all features quality in a horizontal tabbed slider
+- having a button to toggle monthly/annual pricing cards with flipping cards effect
+- See all testimonials in a horizontal draggable/scrollable slider
+- See hover states for all interactive elements on the page
+- Receive an error message when the newsletter sign-up `form` is submitted if:
+  - The `input` field is empty
+  - The email address is not formatted correctly
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Links
 
-## Learn More
+- [Live Demo URL](https://agency-website-landing-nextjs.onrender.com)
+- [ Design Owner URL ](https://startuplanding.redq.io)
 
-To learn more about Next.js, take a look at the following resources:
+## Built with
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Semantic HTML5 markup
+- TailwindCSS and Sass
+- Mobile-first workflow
+- Next.js
+- Swiper.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Screenshots
 
-## Deploy on Vercel
+![](./screenshots/all_screens.jpg)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Get started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### The Available Scripts:
+
+In the project directory, you can run:
+
+### `npm run dev`
+
+Runs the app with next dev in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `npm run build`
+
+Builds the app for production to the `.next` / `out` folder.\
+It correctly bundles the app in production mode and optimizes the build for the best performance.
+
+The app is ready to be deployed!
+
+### `npm run start`
+
+Runs a preview for the website in production mode from `.next` folder.
