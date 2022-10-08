@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Logo } from './Logo';
+import { motion } from 'framer-motion';
 
 function Navigation() {
   const logoRef = useRef();
@@ -25,7 +26,6 @@ function Navigation() {
   if (viewWidth > 1024 && navRef.current.classList.contains('active')) {
     toggleMenu();
   }
-
   useEffect(() => {
     handleHeaderOnScroll(scrollLength);
     window.addEventListener('resize', handleResize, { passive: true });
@@ -79,7 +79,44 @@ function Navigation() {
       section.forEach((sec) => observer.observe(sec));
     });
   }, []);
+  // Animations
+  const navListVariant = {
+    offscreen: {},
+    onscreen: {
+      transition: {
+        type: 'spring',
+        bounce: 0.15,
+        staggerChildren: 0.09,
+      },
+    },
+  };
+  const ItemVariant = {
+    offscreen: {
+      opacity: 0,
+      y: '20%',
+    },
 
+    onscreen: {
+      opacity: 1,
+      y: '0%',
+    },
+  };
+  const button = {
+    offscreen: {
+      scaleX: 0.77,
+      opacity: 0,
+    },
+    onscreen: {
+      scaleX: 1,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        bounce: 0.2,
+        duration: 0.45,
+        delay: 0.25,
+      },
+    },
+  };
   return (
     <header
       ref={headerRef}
@@ -89,9 +126,12 @@ function Navigation() {
       <div className='col-start-2 col-span-10 3xl:col-start-3 3xl:col-span-8 py-4 xl:py-8 flex justify-between items-center [&.scrolled-down]:py-1.5 [&.scrolled-down]:xl:py-3.5 transition-all duration-[0.84s]'>
         {/* header Buttons */}
         <div className='flex gap-6 xl:gap-12 items-center justify-center order-6'>
-          <button
+          <motion.button
             disabled
             className=' py-3 text-heading-base capitalize font-semibold flex items-center justify-center gap-3'
+            variants={button}
+            initial='offscreen'
+            animate='onscreen'
           >
             <img
               className='object-cover w-35 h-45'
@@ -99,11 +139,16 @@ function Navigation() {
               alt={'logo img'}
             />
             <span className='block'>login</span>
-          </button>
+          </motion.button>
 
-          <button className='hidden lg:inline-block bg-primary-base/20 text-primary-base px-4 py-2 rounded-md capitalize font-semibold border-2 border-transparent hover:bg-primary-base/0 hover:border-primary-base transition-all duration-500'>
+          <motion.button
+            className='hidden lg:inline-block bg-primary-base/20 text-primary-base px-4 py-2 rounded-md capitalize font-semibold border-2 border-transparent hover:bg-primary-base/0 hover:border-primary-base transition-all duration-500'
+            variants={button}
+            initial='offscreen'
+            animate='onscreen'
+          >
             get Started
-          </button>
+          </motion.button>
 
           {/* Menu Button */}
           <div className='lg:hidden flex items-center z-40'>
@@ -137,59 +182,77 @@ function Navigation() {
           ref={navRef}
           className='nav h-screen absolute top-0 right-0 min-w-[70%] max-w-xs transition-all duration-1000 translate-x-[140%] [&.active]:block [&.active]:bg-white [&.active]:translate-x-[0%] z-20 pt-28 lg:min-w-fit lg:static lg:h-fit lg:w-fit lg:p-0 lg:translate-x-0 '
         >
-          <div ref={logoRef} className={'w-fit h-fit'}>
+          <motion.div ref={logoRef} className={'w-fit h-fit'}>
             <Logo
               Wrapperclasses={
                 'lg:hidden w-32 h-fit flex items-center absolute top-6 left-8 md:left-16 transition-opacity duration-[3.5s] opacity-0 [&.active]:opacity-100 xl:w-fit'
               }
             />
-          </div>
+          </motion.div>
 
-          <ul
+          <motion.ul
             ref={navList}
             className='pl-8 md:pl-16 lg:pl-0 flex flex-col lg:flex-row'
+            variants={navListVariant}
+            initial='offscreen'
+            animate='onscreen'
           >
-            <li className='border-y-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03 lg:py-0 lg:border-none'>
+            <motion.li
+              className='border-y-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03 lg:py-0 lg:border-none'
+              variants={ItemVariant}
+            >
               <a
                 href='#home'
                 className='capitalize block py-3 text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-base lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
               >
                 home
               </a>
-            </li>
-            <li className='border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'>
+            </motion.li>
+            <motion.li
+              className='border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'
+              variants={ItemVariant}
+            >
               <a
                 href='#support'
                 className='capitalize block py-3 text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-base lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
               >
                 support
               </a>
-            </li>
-            <li className='border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'>
+            </motion.li>
+            <motion.li
+              className='border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'
+              variants={ItemVariant}
+            >
               <a
                 href='#features'
                 className='capitalize block py-3 text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-base lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
               >
                 features
               </a>
-            </li>
-            <li className='border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'>
+            </motion.li>
+            <motion.li
+              className='border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'
+              variants={ItemVariant}
+            >
               <a
                 href='#pricing'
                 className='capitalize block py-3 text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-base lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
               >
                 pricing
               </a>
-            </li>
-            <li className='border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'>
+            </motion.li>
+            <motion.li
+              className='border-b-[.12rem] border-neutral-200 hover:bg-primary-base/[0.03] lg:py-0 lg:border-none'
+              variants={ItemVariant}
+            >
               <a
                 href='#testimonials'
                 className='capitalize block py-3 text-bodytxt-secondary/60 font-medium hover:text-primary-base [&.active]:text-primary-base lg:px-2 2xl:px-6 lg:text-bodytxt-secondary '
               >
                 testimonials
               </a>
-            </li>
-          </ul>
+            </motion.li>
+          </motion.ul>
         </nav>
       </div>
     </header>
